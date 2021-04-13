@@ -38,12 +38,16 @@ if (input.length === 0) {
 }
 
 //VALIDATION STATE
+let correctPass = "";
+let correctEmail = "";
+
 function validationFunction() {
 	// EMAIL INPUT VALIDATION
 	if (email.value === '' || email.value === null) {
 		wrong.innerHTML = '<p>Please enter your email</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		// email.style.backgroundColor = '#e74c3c';
 		return;
 	} else if (
 		email.value.search(
@@ -53,12 +57,23 @@ function validationFunction() {
 		wrong.innerHTML = '<p>The email entered is not valid</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		email.style.backgroundColor = '#e74c3c';
 		return;
 	}
 
 	// PASSWORD INPUT VALIDATION
 	if (password.value === '' || password.value === null) {
 		wrong.innerHTML = '<p>Please enter a password</p>';
+		wrong.style.display = 'contents';
+		wrong.style.color = '#e74c3c';
+		return;
+	} else if (password.length < 8) {
+		wrong.innerHTML = '<p>Please enter a password greater than 8 characters</p>';
+		wrong.style.display = 'contents';
+		wrong.style.color = '#e74c3c';
+		return;
+	} else if (password.value.search(/[0-9]/) == -1){
+		wrong.innerHTML = '<p>Please enter a password with one number minimum</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
 		return;
