@@ -13,6 +13,9 @@ let wrong = document.getElementById('message-text');
 let label = document.getElementsByTagName('label');
 let input = document.getElementsByTagName('input');
 
+// BUTTON SEND
+let sendButton = document.getElementById('button-send');
+
 // TAGS VALIDATION
 if (form.length === 0) {
 	wrong.innerHTML = '<p>Please create a form</p>';
@@ -38,14 +41,20 @@ if (input.length === 0) {
 }
 
 //VALIDATION STATE
+let parametricEmail = "";
+let parametricPass = "";
+let wrongTextEmail = "";
+let wrongTextPass = "";
 
-function validationFunction() {
-	// EMAIL INPUT VALIDATION
+// EMAIL INPUT VALIDATION
+function validationEmail(){
 	if (email.value === '' || email.value === null) {
 		wrong.innerHTML = '<p>Please enter your email</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		// email.style.backgroundColor = '#e74c3c';
+		email.style.backgroundColor = '#FFC107';
+		parametricEmail = 1;
+		wrongTextEmail = 'wrong';
 		return;
 	} else if (
 		email.value.search(
@@ -55,31 +64,66 @@ function validationFunction() {
 		wrong.innerHTML = '<p>The email entered is not valid</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		email.style.backgroundColor = '#e74c3c';
+		email.style.backgroundColor = '#FFC107';
+		parametricEmail = 1;
+		wrongTextEmail = 'wrong';
 		return;
 	}
+	else {
+		parametricEmail = 0;
+	}
+}
 
-	// PASSWORD INPUT VALIDATION
+function clearInputEmail(){
+	if(wrongTextEmail == 'wrong'){
+		wrong.style.display = 'none';
+		email.style.backgroundColor = '#FFF'
+	}
+}
+
+// PASSWORD INPUT VALIDATION
+function validationPass(){
 	if (password.value === '' || password.value === null) {
 		wrong.innerHTML = '<p>Please enter a password</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		password.style.backgroundColor = '#FFC107';
+		parametricPass = 1;
+		wrongTextPass = "wrong";
 		return;
 	} else if (password.length < 8) {
 		wrong.innerHTML =
 			'<p>Please enter a password greater than 8 characters</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		password.style.backgroundColor = '#FFC107';
+		parametricPass = 1;
+		wrongTextPass = "wrong";
 		return;
 	} else if (password.value.search(/[0-9]/) == -1) {
 		wrong.innerHTML = '<p>Please enter a password with one number minimum</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		password.style.backgroundColor = '#FFC107';
+		parametricPass = 1;
+		wrongTextPass = "wrong";
 		return;
 	}
-
-	// SUCCESS VALIDATION
 	else {
+		parametricPass = 0;
+	}
+}
+
+function clearInputPass(){
+	if(wrongTextPass == 'wrong'){
+		wrong.style.display = 'none';
+		password.style.backgroundColor = '#FFF'
+	}
+}
+
+// SUCCESS VALIDATION
+function validationFunction() {
+	if (parametricEmail == 0 && parametricPass == 0) {
 		let correctPass = password.value;
 		let correctEmail = email.value;
 
@@ -91,8 +135,12 @@ function validationFunction() {
 	}
 }
 
-// BUTTON SEND
-var sendButton = document.getElementById('button-send');
-
 // EVENTS STATE
+email.addEventListener('blur', validationEmail);
+email.addEventListener('focus', clearInputEmail);
+
+password.addEventListener('blur', validationPass);
+password.addEventListener('focus', clearInputPass);
+
 sendButton.addEventListener('click', validationFunction);
+
