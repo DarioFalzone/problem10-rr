@@ -52,7 +52,6 @@ function validationEmail(){
 		wrong.innerHTML = '<p>Please enter your email</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		email.style.backgroundColor = '#FFC107';
 		parametricEmail = 1;
 		wrongTextEmail = 'wrong';
 		return;
@@ -64,7 +63,6 @@ function validationEmail(){
 		wrong.innerHTML = '<p>The email entered is not valid</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		email.style.backgroundColor = '#FFC107';
 		parametricEmail = 1;
 		wrongTextEmail = 'wrong';
 		return;
@@ -87,7 +85,6 @@ function validationPass(){
 		wrong.innerHTML = '<p>Please enter a password</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		password.style.backgroundColor = '#FFC107';
 		parametricPass = 1;
 		wrongTextPass = "wrong";
 		return;
@@ -96,7 +93,6 @@ function validationPass(){
 			'<p>Please enter a password greater than 8 characters</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		password.style.backgroundColor = '#FFC107';
 		parametricPass = 1;
 		wrongTextPass = "wrong";
 		return;
@@ -104,7 +100,6 @@ function validationPass(){
 		wrong.innerHTML = '<p>Please enter a password with one number minimum</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
-		password.style.backgroundColor = '#FFC107';
 		parametricPass = 1;
 		wrongTextPass = "wrong";
 		return;
@@ -144,3 +139,10 @@ password.addEventListener('focus', clearInputPass);
 
 sendButton.addEventListener('click', validationFunction);
 
+// // HTTP REQUEST
+// function apiRequest()
+// {
+//     let url = "https://jsonplaceholder.typicode.com/users?email=" + email.value + password.value;
+//     fetch(url)
+//     .then(response => console.log(response));
+// }

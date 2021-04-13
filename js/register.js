@@ -2,26 +2,29 @@
 const form = document.getElementsByTagName('form');
 
 // GET ELEMENTS BY ID
-var email = document.getElementById('register-email');
-var nameUser = document.getElementById('register-name');
-var password = document.getElementById('register-pass');
-var rePassword = document.getElementById('re-password');
-var resetButton = document.getElementById('reset-button');
+let email = document.getElementById('register-email');
+let nameUser = document.getElementById('register-name');
+let password = document.getElementById('register-password');
+let rePassword = document.getElementById('re-password');
+let resetButton = document.getElementById('reset-button');
 
 // MESSAGE ALERT
-var success = document.getElementById('message-text');
-var wrong = document.getElementById('message-text');
+let success = document.getElementById('message-text');
+let wrong = document.getElementById('message-text');
 
 // GET ELEMENTS BY TAG NAME
-var label = document.getElementsByTagName('label');
-var input = document.getElementsByTagName('input');
+let label = document.getElementsByTagName('label');
+let input = document.getElementsByTagName('input');
 const button = document.getElementsByTagName('button');
+
+// BUTTON SEND
+let sendButton = document.getElementById('button-send');
 
 // TAGS VALIDATION
 if (button.length === 0) {
 	wrong.innerHTML = '<p>Please create a button</p>';
 	wrong.style.display = 'contents';
-} else if (button.length < 2 || button.length > 2) {
+} else if (button.length < 1) {
 	wrong.innerHTML =
 		'<p>The form must have two button as a minimum / maximum</p>';
 	wrong.style.display = 'contents';
@@ -50,23 +53,64 @@ if (input.length === 0) {
 	wrong.style.display = 'contents';
 }
 
-function validationFunction() {
-	// NAME INPUT VALIDATION
+//VALIDATION STATE
+let parametricNameUser = '';
+let parametricEmail = '';
+let parametricPass = '';
+let parametricRePass = '';
+let wrongTextNameUser = '';
+let wrongTextEmail = '';
+let wrongTextPass = '';
+let wrongTextRePass = '';
+
+// NAME INPUT VALIDATION
+function validationNameUser() {
+	// let userNameWhiteSpace = /^[a-zA-Z]+[ ]+[a-zA-Z\s]+$/;
+
 	if (nameUser.value === '' || nameUser.value === null) {
-		wrong.innerHTML = '<p>Please enter your email</p>';
+		wrong.innerHTML = '<p>Please enter your Name</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		parametricNameUser = 1;
+		wrongTextNameUser = 'wrong';
 		return;
+	} else if (nameUser.length < 6) {
+		wrong.innerHTML = '<p>Please enter your Name with minimum 6 character</p>';
+		wrong.style.display = 'contents';
+		wrong.style.color = '#e74c3c';
+		parametricNameUser = 1;
+		wrongTextNameUser = 'wrong';
+		return;
+	} else {
+		parametricNameUser = 0;
 	}
-	// EMAIL INPUT VALIDATION
+	// else if (nameUser.value.match(userNameWhiteSpace)!=true) {
+	// 	wrong.innerHTML = '<p>Please enter your Name with one With Space</p>';
+	// 	wrong.style.display = 'contents';
+	// 	wrong.style.color = '#e74c3c';
+	// 	parametricNameUser = 1;
+	// 	wrongTextNameUser = 'wrong';
+	// 	return;
+	// }
+}
+
+function clearInputNameUser() {
+	if (wrongTextNameUser == 'wrong') {
+		wrong.style.display = 'none';
+		nameUser.style.backgroundColor = '#FFF';
+	}
+}
+
+// EMAIL INPUT VALIDATION
+function validationEmail() {
 	if (email.value === '' || email.value === null) {
 		wrong.innerHTML = '<p>Please enter your email</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		parametricEmail = 1;
+		wrongTextEmail = 'wrong';
 		return;
-	}
-
-	if (
+	} else if (
 		email.value.search(
 			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 		) == -1
@@ -74,26 +118,120 @@ function validationFunction() {
 		wrong.innerHTML = '<p>The email entered is not valid</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		parametricEmail = 1;
+		wrongTextEmail = 'wrong';
 		return;
+	} else {
+		parametricEmail = 0;
 	}
+}
 
-	// PASSWORD INPUT VALIDATION
+function clearInputEmail() {
+	if (wrongTextEmail == 'wrong') {
+		wrong.style.display = 'none';
+		email.style.backgroundColor = '#FFF';
+	}
+}
+
+// PASSWORD INPUT VALIDATION
+function validationPass() {
 	if (password.value === '' || password.value === null) {
 		wrong.innerHTML = '<p>Please enter a password</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		parametricPass = 1;
 		return;
-	} else if (password != rePassword) {
+	} else if (password.length < 8) {
+		wrong.innerHTML =
+			'<p>Please enter a password greater than 8 characters</p>';
+		wrong.style.display = 'contents';
+		wrong.style.color = '#e74c3c';
+		parametricPass = 1;
+		wrongTextPass = 'wrong';
+		return;
+	} else if (password.value.search(/[0-9]/) == -1) {
+		wrong.innerHTML = '<p>Please enter a password with one number minimum</p>';
+		wrong.style.display = 'contents';
+		wrong.style.color = '#e74c3c';
+		parametricPass = 1;
+		wrongTextPass = 'wrong';
+		return;
+	} else {
+		parametricPass = 0;
+	}
+}
+
+function clearInputPass() {
+	if (wrongTextPass == 'wrong') {
+		wrong.style.display = 'none';
+		password.style.backgroundColor = '#FFF';
+	}
+}
+
+// RE-PASSWORD INPUT VALIDATION
+function validationRePass() {
+	if (rePassword.value === '' || rePassword.value === null) {
+		wrong.innerHTML = '<p>Please enter a password</p>';
+		wrong.style.display = 'contents';
+		wrong.style.color = '#e74c3c';
+		parametricPass = 1;
+		return;
+	}
+	else if (password.value != rePassword.value) {
 		wrong.innerHTML = '<p>The passwords are not the same</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
+		parametricPass = 1;
+		wrongTextRePass = 'wrong';
 		return;
 	}
-
-	// SUCCESS VALIDATION
 	else {
-		success.innerHTML = '<p>Every validation has passed</p>';
+		 parametricRePass = 0;
+	}
+}
+
+function clearInputRePass() {
+	if (wrongTextRePass == 'wrong') {
+		wrong.style.display = 'none';
+		rePassword.style.backgroundColor = '#FFF';
+	}
+}
+
+// SUCCESS VALIDATION
+function validationFunction() {
+	if (parametricNameUser == 0 && parametricEmail == 0 && parametricPass == 0 && parametricRePass == 0) {
+		let correctName = nameUser.value;
+		let correctPass = password.value;
+		let correctEmail = email.value;
+
+		success.innerHTML = ` <p>Every validation has passed</p>
+													<p>Your Username is: <br> ${correctName}</p>
+													<p>Your email is: <br> ${correctEmail}</p>
+													<p>Your password is: <br> ${correctPass}</p> `;
 		success.style.display = 'contents';
 		success.style.color = '#27ae60';
 	}
 }
+
+// EVENTS STATE
+nameUser.addEventListener('blur', validationNameUser);
+nameUser.addEventListener('focus', clearInputNameUser);
+
+email.addEventListener('blur', validationEmail);
+email.addEventListener('focus', clearInputEmail);
+
+password.addEventListener('blur', validationPass);
+password.addEventListener('focus', clearInputPass);
+
+rePassword.addEventListener('blur', validationRePass);
+rePassword.addEventListener('focus', clearInputRePass);
+
+sendButton.addEventListener('click', validationFunction);
+
+// HTTP REQUEST
+// function apiRequest()
+// {
+//     let url = "https://jsonplaceholder.typicode.com/users?email=" + userName.value + email.value + password.value;
+//     fetch(url)
+//     .then(response => console.log(response));
+// }
