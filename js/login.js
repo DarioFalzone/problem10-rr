@@ -38,8 +38,6 @@ if (input.length === 0) {
 }
 
 //VALIDATION STATE
-let correctPass = "";
-let correctEmail = "";
 
 function validationFunction() {
 	// EMAIL INPUT VALIDATION
@@ -68,11 +66,12 @@ function validationFunction() {
 		wrong.style.color = '#e74c3c';
 		return;
 	} else if (password.length < 8) {
-		wrong.innerHTML = '<p>Please enter a password greater than 8 characters</p>';
+		wrong.innerHTML =
+			'<p>Please enter a password greater than 8 characters</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
 		return;
-	} else if (password.value.search(/[0-9]/) == -1){
+	} else if (password.value.search(/[0-9]/) == -1) {
 		wrong.innerHTML = '<p>Please enter a password with one number minimum</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
@@ -81,7 +80,12 @@ function validationFunction() {
 
 	// SUCCESS VALIDATION
 	else {
-		success.innerHTML = '<p>Every validation has passed</p>';
+		let correctPass = password.value;
+		let correctEmail = email.value;
+
+		success.innerHTML = ` <p>Every validation has passed</p>
+													<p>Your email is: <br> ${correctEmail}</p>
+													<p>Your password is: <br> ${correctPass}</p> `;
 		success.style.display = 'contents';
 		success.style.color = '#27ae60';
 	}
