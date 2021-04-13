@@ -45,9 +45,7 @@ function validationFunction() {
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
 		return;
-	}
-
-	if (
+	} else if (
 		email.value.search(
 			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 		) == -1
