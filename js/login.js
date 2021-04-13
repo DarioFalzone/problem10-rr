@@ -2,24 +2,18 @@
 const form = document.getElementsByTagName('form');
 
 // GET ELEMENTS BY ID
-var email = document.getElementById('login-email');
-var password = document.getElementById('login-pass');
+let email = document.getElementById('login-email');
+let password = document.getElementById('login-pass');
 
 // MESSAGE ALERT
-var success = document.getElementById('message-text');
-var wrong = document.getElementById('message-text');
+let success = document.getElementById('message-text');
+let wrong = document.getElementById('message-text');
 
 // GET ELEMENTS BY TAG NAME
-var label = document.getElementsByTagName('label');
-var input = document.getElementsByTagName('input');
-const button = document.getElementsByTagName('button');
+let label = document.getElementsByTagName('label');
+let input = document.getElementsByTagName('input');
 
 // TAGS VALIDATION
-if (button.length === 0) {
-	wrong.innerHTML = '<p>Please create a button</p>';
-	wrong.style.display = 'contents';
-}
-
 if (form.length === 0) {
 	wrong.innerHTML = '<p>Please create a form</p>';
 	wrong.style.display = 'contents';
@@ -37,12 +31,13 @@ if (label.length === 0) {
 if (input.length === 0) {
 	wrong.innerHTML = '<p>Please create a input</p>';
 	wrong.style.display = 'contents';
-} else if (label.length < 2 || label.length > 2) {
+} else if (input.length < 3 || input.length > 3) {
 	wrong.innerHTML =
-		'<p>The form must have two input as a minimum / maximum</p>';
+		'<p>The form must have three input as a minimum / maximum</p>';
 	wrong.style.display = 'contents';
 }
 
+//VALIDATION STATE
 function validationFunction() {
 	// EMAIL INPUT VALIDATION
 	if (email.value === '' || email.value === null) {
@@ -78,3 +73,9 @@ function validationFunction() {
 		success.style.color = '#27ae60';
 	}
 }
+
+// BUTTON SEND
+var sendButton = document.getElementById('button-send');
+
+// EVENTS STATE
+sendButton.addEventListener('click', validationFunction);
