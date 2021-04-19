@@ -25,8 +25,7 @@ if (button.length === 0) {
 	wrong.innerHTML = '<p>Please create a button</p>';
 	wrong.style.display = 'contents';
 } else if (button.length < 1) {
-	wrong.innerHTML =
-		'<p>The form must have two button as a minimum / maximum</p>';
+	wrong.innerHTML = '<p>The form must have two button as a minimum / maximum</p>';
 	wrong.style.display = 'contents';
 }
 
@@ -39,8 +38,7 @@ if (label.length === 0) {
 	wrong.innerHTML = '<p>Please create a label</p>';
 	wrong.style.display = 'contents';
 } else if (label.length < 4 || label.length > 4) {
-	wrong.innerHTML =
-		'<p>The form must have four labels as a minimum / maximum</p>';
+	wrong.innerHTML = '<p>The form must have four labels as a minimum / maximum</p>';
 	wrong.style.display = 'contents';
 }
 
@@ -48,8 +46,7 @@ if (input.length === 0) {
 	wrong.innerHTML = '<p>Please create a input</p>';
 	wrong.style.display = 'contents';
 } else if (label.length < 4 || label.length > 4) {
-	wrong.innerHTML =
-		'<p>The form must have four input as a minimum / maximum</p>';
+	wrong.innerHTML = '<p>The form must have four input as a minimum / maximum</p>';
 	wrong.style.display = 'contents';
 }
 
@@ -142,8 +139,7 @@ function validationPass() {
 		parametricPass = 1;
 		return;
 	} else if (password.length < 8) {
-		wrong.innerHTML =
-			'<p>Please enter a password greater than 8 characters</p>';
+		wrong.innerHTML = '<p>Please enter a password greater than 8 characters</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
 		parametricPass = 1;
@@ -207,10 +203,10 @@ function validationFunction() {
 		let correctPass = password.value;
 		let correctEmail = email.value;
 
-		success.innerHTML = ` <p>Every validation has passed</p>
-													<p>Your Username is: <br> ${correctName}</p>
-<p>Your email is: <br> ${correctEmail}</p>
-													<p>Your password is: <br> ${correctPass}</p>`;
+		success.innerHTML = `<p>Every validation has passed</p>
+				     <p>Your Username is: <br> ${correctName}</p>
+				     <p>Your email is: <br> ${correctEmail}</p>
+				     <p>Your password is: <br> ${correctPass}</p>`;
 		success.style.display = 'contents';
 		success.style.color = '#27ae60';
 	}
