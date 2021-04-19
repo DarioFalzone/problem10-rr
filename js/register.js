@@ -176,17 +176,15 @@ function validationRePass() {
 		wrong.style.color = '#e74c3c';
 		parametricPass = 1;
 		return;
-	}
-	else if (password.value != rePassword.value) {
+	} else if (password.value != rePassword.value) {
 		wrong.innerHTML = '<p>The passwords are not the same</p>';
 		wrong.style.display = 'contents';
 		wrong.style.color = '#e74c3c';
 		parametricPass = 1;
 		wrongTextRePass = 'wrong';
 		return;
-	}
-	else {
-		 parametricRePass = 0;
+	} else {
+		parametricRePass = 0;
 	}
 }
 
@@ -199,7 +197,12 @@ function clearInputRePass() {
 
 // SUCCESS VALIDATION
 function validationFunction() {
-	if (parametricNameUser == 0 && parametricEmail == 0 && parametricPass == 0 && parametricRePass == 0) {
+	if (
+		parametricNameUser == 0 &&
+		parametricEmail == 0 &&
+		parametricPass == 0 &&
+		parametricRePass == 0
+	) {
 		let correctName = nameUser.value;
 		let correctPass = password.value;
 		let correctEmail = email.value;
@@ -229,9 +232,11 @@ rePassword.addEventListener('focus', clearInputRePass);
 sendButton.addEventListener('click', validationFunction);
 
 // HTTP REQUEST
-function apiRequest()
-{
-    let url = "https://jsonplaceholder.typicode.com/users?email=" + userName.value + email.value + password.value;
-    fetch(url)
-    .then(response => console.log(response));
+function apiRequest() {
+	let url =
+		'https://jsonplaceholder.typicode.com/users?email=' +
+		userName.value +
+		email.value +
+		password.value;
+	fetch(url).then((response) => console.log(response));
 }
