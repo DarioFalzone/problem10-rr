@@ -127,6 +127,20 @@ function validationFunction() {
 													<p>Your password is: <br> ${correctPass}</p> `;
 		success.style.display = 'contents';
 		success.style.color = '#27ae60';
+
+		//JSON MANAGE
+		const newUser = {
+			email: correctEmail,
+			password: correctPass
+		}
+
+		fetch('http://localhost:4000/login',{
+			method: 'POST',
+			body: JSON.stringify(newUser),
+			headers: { 'Content-Type': 'application/json',}
+		})
+			.then(response => response.text())
+			.then((data) => console.log(data));
 	}
 }
 
@@ -138,12 +152,3 @@ password.addEventListener('blur', validationPass);
 password.addEventListener('focus', clearInputPass);
 
 sendButton.addEventListener('click', validationFunction);
-
-// // HTTP REQUEST
-function apiRequest()
-{
-    const url = `https://jsonplaceholder.typicode.com/users?email=${email.value}`;
-    fetch(url)
-			.then(response => response.json()) //Formateo a json la respuesta
-			.then(json => console.log(json)) //Muestro en consola
-}
