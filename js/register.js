@@ -191,6 +191,13 @@ function clearInputRePass() {
 	}
 }
 
+//JSON MANAGE
+const newUser = {
+	name: correctName,
+	email: correctEmail,
+	password: correctPass
+}
+
 // SUCCESS VALIDATION
 function validationFunction() {
 	if (
@@ -227,12 +234,11 @@ rePassword.addEventListener('focus', clearInputRePass);
 
 sendButton.addEventListener('click', validationFunction);
 
-// HTTP REQUEST
-function apiRequest() {
-	let url =
-		'https://jsonplaceholder.typicode.com/users?email=' +
-		userName.value +
-		email.value +
-		password.value;
-	fetch(url).then((response) => console.log(response));
+// // HTTP REQUEST
+function apiRequest()
+{
+    const url = `https://jsonplaceholder.typicode.com/users?email=${email.value}`;
+    fetch(url)
+			.then(response => response.json()) //Formateo a json la respuesta
+			.then(json => console.log(json)) //Muestro en consola
 }
