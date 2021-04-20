@@ -62,8 +62,6 @@ let wrongTextRePass = '';
 
 // NAME INPUT VALIDATION
 function validationNameUser() {
-	// let userNameWhiteSpace = /^[a-zA-Z]+[ ]+[a-zA-Z\s]+$/;
-
 	if (nameUser.value === '' || nameUser.value === null) {
 		wrong.innerHTML = '<p>Please enter your Name</p>';
 		wrong.style.display = 'contents';
@@ -81,14 +79,6 @@ function validationNameUser() {
 	} else {
 		parametricNameUser = 0;
 	}
-	// else if (nameUser.value.match(userNameWhiteSpace)!=true) {
-	// 	wrong.innerHTML = '<p>Please enter your Name with one With Space</p>';
-	// 	wrong.style.display = 'contents';
-	// 	wrong.style.color = '#e74c3c';
-	// 	parametricNameUser = 1;
-	// 	wrongTextNameUser = 'wrong';
-	// 	return;
-	// }
 }
 
 function clearInputNameUser() {
@@ -191,14 +181,6 @@ function clearInputRePass() {
 	}
 }
 
-//JSON MANAGE
-const newUser = {
-	name: correctName,
-	email: correctEmail,
-	password: correctPass
-}
-
-// SUCCESS VALIDATION
 function validationFunction() {
 	if (
 		parametricNameUser == 0 &&
@@ -206,17 +188,32 @@ function validationFunction() {
 		parametricPass == 0 &&
 		parametricRePass == 0
 	) {
-		let correctName = nameUser.value;
-		let correctPass = password.value;
-		let correctEmail = email.value;
+			let correctName = nameUser.value;
+			let correctPass = password.value;
+			let correctEmail = email.value;
 
-		success.innerHTML = `<p>Every validation has passed</p>
-				     <p>Your Username is: <br> ${correctName}</p>
-				     <p>Your email is: <br> ${correctEmail}</p>
-				     <p>Your password is: <br> ${correctPass}</p>`;
-		success.style.display = 'contents';
-		success.style.color = '#27ae60';
-	}
+			success.innerHTML = `<p>Every validation has passed</p>
+							<p>Your Username is: <br> ${correctName}</p>
+							<p>Your email is: <br> ${correctEmail}</p>
+							<p>Your password is: <br> ${correctPass}</p>`;
+			success.style.display = 'contents';
+			success.style.color = '#27ae60';
+
+			//JSON MANAGE
+			const newUser = {
+				name: correctName,
+				email: correctEmail,
+				password: correctPass
+			}
+
+			fetch('http://localhost:4000/register',{
+				method: 'POST',
+				body: JSON.stringify(newUser),
+				headers: { 'Content-Type': 'application/json',}
+			})
+				.then(response => response.text())
+				.then((data) => console.log(data));
+		}
 }
 
 // EVENTS STATE
@@ -233,12 +230,3 @@ rePassword.addEventListener('blur', validationRePass);
 rePassword.addEventListener('focus', clearInputRePass);
 
 sendButton.addEventListener('click', validationFunction);
-
-// // HTTP REQUEST
-function apiRequest()
-{
-    const url = `https://jsonplaceholder.typicode.com/users?email=${email.value}`;
-    fetch(url)
-			.then(response => response.json()) //Formateo a json la respuesta
-			.then(json => console.log(json)) //Muestro en consola
-}
