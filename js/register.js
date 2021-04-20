@@ -76,9 +76,7 @@ function validationNameUser() {
 		parametricNameUser = 1;
 		wrongTextNameUser = 'wrong';
 		return;
-	} else {
-		parametricNameUser = 0;
-	}
+	} else { parametricNameUser = 0 }
 }
 
 function clearInputNameUser() {
@@ -108,9 +106,7 @@ function validationEmail() {
 		parametricEmail = 1;
 		wrongTextEmail = 'wrong';
 		return;
-	} else {
-		parametricEmail = 0;
-	}
+	} else { parametricNameUser = 0 }
 }
 
 function clearInputEmail() {
@@ -142,9 +138,7 @@ function validationPass() {
 		parametricPass = 1;
 		wrongTextPass = 'wrong';
 		return;
-	} else {
-		parametricPass = 0;
-	}
+	} else { parametricNameUser = 0 }
 }
 
 function clearInputPass() {
@@ -169,9 +163,7 @@ function validationRePass() {
 		parametricPass = 1;
 		wrongTextRePass = 'wrong';
 		return;
-	} else {
-		parametricRePass = 0;
-	}
+	} else { parametricNameUser = 0 }
 }
 
 function clearInputRePass() {
@@ -188,31 +180,31 @@ function validationFunction() {
 		parametricPass == 0 &&
 		parametricRePass == 0
 	) {
-			let correctName = nameUser.value;
-			let correctPass = password.value;
-			let correctEmail = email.value;
+		let correctName = nameUser.value;
+		let correctPass = password.value;
+		let correctEmail = email.value;
 
-			success.innerHTML = `<p>Every validation has passed</p>
-							<p>Your Username is: <br> ${correctName}</p>
-							<p>Your email is: <br> ${correctEmail}</p>
-							<p>Your password is: <br> ${correctPass}</p>`;
-			success.style.display = 'contents';
-			success.style.color = '#27ae60';
+		success.innerHTML = `<p>Every validation has passed</p>
+				                 <p>Your Username is: <br> ${correctName}</p>
+				                 <p>Your email is: <br> ${correctEmail}</p>
+				                 <p>Your password is: <br> ${correctPass}</p>`;
+		success.style.display = 'contents';
+		success.style.color = '#27ae60';
 
-			//JSON MANAGE
-			const newUser = {
-				name: correctName,
-				email: correctEmail,
-				password: correctPass
-			}
+		//JSON MANAGE
+		const newUser = {
+			name: correctName,
+			email: correctEmail,
+			password: correctPass
+		}
 
-			fetch('http://localhost:4000/register',{
-				method: 'POST',
-				body: JSON.stringify(newUser),
-				headers: { 'Content-Type': 'application/json',}
-			})
-				.then(response => response.text())
-				.then((data) => console.log(data));
+		fetch('http://localhost:4000/register',{
+			method: 'POST',
+			body: JSON.stringify(newUser),
+			headers: { 'Content-Type': 'application/json',}
+		})
+			.then(response => response.text())
+			.then((data) => console.log(data));
 		}
 }
 
