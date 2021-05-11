@@ -1,21 +1,26 @@
 # WEEK 14
-# Descripción del problema a resolver
 La problemática de la semana 14 consiste en crear test automatizados para los formularios creados por ustedes en la problemática de la semana 10 y 11. En este caso no hay un % de cobertura definido, pero deberán crear al menos 2 test para cada sección del formulario.
 
-⛔ EN CURSO:
-	⚠️⚠️
-		- Se implementará PAGE OBJECT para optimizar el código
-		- Se agregarán mas casos de test para cubrir mas funciones
-		- Modificar la estructura de la raiz para una mejor compresion de la estructura de la página
-	⚠️⚠️
+----------------------------------------------------------
 
-✅ FIXEADO:
+# IN COURSE:
+	# ⚠️⚠️
+		# Se implementará PAGE OBJECT para optimizar el código
+		# Se agregarán mas casos de test para cubrir mas funciones
+		# Modificar la estructura de la raiz para una mejor compresion de la estructura de la página
+	# ⚠️⚠️
+
+----------------------------------------------------------
+
+✅ Changelog:
 
 	# Fix 0.0.2:
 	✔ Se agregan un total de tres validaciones a cada formulario con codigo no optimizado
 
 	# Fix 0.0.1:
 	✔ Validaciones correspondiente a la semana 10 funcionando
+
+----------------------------------------------------------
 
 📄 INFORMACION UTIL
 
@@ -24,6 +29,8 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 ⚠️El back de la problematicá esta alojado en el repositorio de la Semana 11:
 	→→ (https://github.com/DarioFalzone/app-11)
+
+----------------------------------------------------------
 
 # Pasos a seguir para ejecutar los tests
 	1 - Descargar repositorio
@@ -65,6 +72,8 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 		→ INPUT REPETIR PASSWORD
 
+----------------------------------------------------------
+
 # Test realizados con WDio ⬇⬇⬇
 	⊛ Formulario LOGEO
 		- Se verificá el titulo de la pagina de manera correcta
@@ -76,6 +85,8 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 		- Se verifica que la url ingresada sea la correcta
 		- Se ingresa informacion correcta a los campos, se presiona click en el boton "register", pass ok
 
+----------------------------------------------------------
+
 # Pasos a seguir para resolver la problematica:
 	1) Dentro del repositorio de la semana 11 (o el más actual) que tengan realizado su formulario,instalar y configurar webdriverIO.
 	2) Borrar todos los archivos innecesarios de WebdriverIO y organizar la estructura de carpetas correctamente.
@@ -85,6 +96,8 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 	5) Deben pasar todos correctamente y deben usar todas las herramientas explicadas (Page
 	Objet).
 	6) Además los selectores deben ser lo más exactos posibles (no usar el copy selector del inspect).
+
+----------------------------------------------------------
 
 # WEEK 10
 # Descripción del problema a resolver
@@ -111,6 +124,8 @@ Al presionar el botón “Registrarse” o “Iniciar sesión”, se debe mostra
 	2) Agregar el código JavaScript necesario para capturar el evento “blur” de cada campo, validar el contenido y mostrar el mensaje de error correspondiente.
 	3) Agregar el código JavaScript necesario para capturar el evento “focus” de cada campo y ocultar el mensaje de error si es que había uno.
 	4) Agregar el código JavaScript necesario para mostrar los valores debajo del formularios y  realizar una HTTP Request  a través del método GET a la siguiente URL: https://jsonplaceholder.typicode.com/users?email=randomEmail@gmail.com, para enviar el valor del email del usuario a los Queryparam de la URL,  al presionar el botón “Registrarse” o “Iniciar sesión”.
+
+----------------------------------------------------------
 
 ## Authors ✒️
 
