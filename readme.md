@@ -27,8 +27,8 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 - ✔ Login Page: (https://dariofalzone.github.io/problem10-rr/)
 - ✔ Register Page: (https://dariofalzone.github.io/problem10-rr/register.html)
 
-⚠️El back de la problematicá esta alojado en el repositorio de la Semana 11:
-	→→ (https://github.com/DarioFalzone/app-11)
+- ⚠️El back de la problematicá esta alojado en el repositorio de la Semana 11:
+#	→→ (https://github.com/DarioFalzone/app-11)
 
 ----------------------------------------------------------
 
