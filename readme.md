@@ -8,14 +8,15 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 - ✔ Login Page: (https://dariofalzone.github.io/problem10-rr/)
 - ✔ Register Page: (https://dariofalzone.github.io/problem10-rr/register.html)
-- ⚠️- El back de la problematicá esta alojado en el repositorio de la Semana 11: (https://github.com/DarioFalzone/app-11)
+- ⚠️- El back de la problematicá esta alojado en el repositorio de la Semana 11:
+(https://github.com/DarioFalzone/app-11)
 
 # Pasos a seguir para ejecutar los tests
 	1 - Descargar repositorio
 	2 - Ejecutar consola en carpeta
 	3 - Tener instalado WDio y sus dependencias
 	4 - npm run test
-	5 - Se ejecutaran de manera automatica los test configuracion (2 por cada página)
+	5 - Se ejecutaran de manera automatica los test configurados por cada página
 
 # Pasos a seguir para resolver la problematica:
 	1) Dentro del repositorio de la semana 11 (o el más actual) que tengan realizado su formulario,instalar y configurar webdriverIO.
