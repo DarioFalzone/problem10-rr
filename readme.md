@@ -4,12 +4,11 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 ⛔ EN CURSO:
 	⚠️⚠️
-		- SE ESTA TRABAJANDO SOBRE LA VALIDACION DE CLICK EN EL BOTON ENVIAR SIN RELLENAR EL FORMULARIO
-		- AGREGAR 2 CASOS DE TEST MAS A CADA FORMULARIO 
+		- AGREGAR 2 CASOS DE TEST MAS A CADA FORMULARIO
 	⚠️⚠️
 
 ✅ FIXEADO:
-						✓ Validaciones correspondiente a la semana 10 funcionando
+	✔ Validaciones correspondiente a la semana 10 funcionando
 
 📄 INFORMACION UTIL
 
@@ -17,8 +16,7 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 - ✔ Register Page: (https://dariofalzone.github.io/problem10-rr/register.html)
 
 ⚠️El back de la problematicá esta alojado en el repositorio de la Semana 11:
-
-(https://github.com/DarioFalzone/app-11)
+	→→ (https://github.com/DarioFalzone/app-11)
 
 # Pasos a seguir para ejecutar los tests
 	1 - Descargar repositorio
