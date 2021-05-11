@@ -2,11 +2,20 @@
 # Descripción del problema a resolver
 La problemática de la semana 14 consiste en crear test automatizados para los formularios creados por ustedes en la problemática de la semana 10 y 11. En este caso no hay un % de cobertura definido, pero deberán crear al menos 2 test para cada sección del formulario.
 
+⚠️⚠️ 
+	SE ESTÁ TRABAJANDO EN LA VALIDACION DE LOS FORMULARIOS , AL MODIFICAR LOS ARCHIVOS PUEDE FALLAR HASTA QUE ESTO ESTÉ SOLUCIONADO
+⚠️⚠️
+
+- ✔ Login Page: (https://dariofalzone.github.io/problem10-rr/)
+- ✔ Register Page: (https://dariofalzone.github.io/problem10-rr/register.html)
+- ⚠️- El back de la problematicá esta alojado en el repositorio de la Semana 11: (https://github.com/DarioFalzone/app-11)
+
 # Pasos a seguir para ejecutar los tests
-	- Lorem ipsum dolor lorem
-	- Lorem ipsum dolor lorem
-	- Lorem ipsum dolor lorem
-	- Lorem ipsum dolor lorem
+	1 - Descargar repositorio
+	2 - Ejecutar consola en carpeta
+	3 - Tener instalado WDio y sus dependencias
+	4 - npm run test
+	5 - Se ejecutaran de manera automatica los test configuracion (2 por cada página)
 
 # Pasos a seguir para resolver la problematica:
 	1) Dentro del repositorio de la semana 11 (o el más actual) que tengan realizado su formulario,instalar y configurar webdriverIO.
