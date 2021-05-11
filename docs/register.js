@@ -192,19 +192,19 @@ function validationFunction() {
 		success.style.color = '#27ae60';
 
 		//JSON MANAGE
-		const newUser = {
-			name: correctName,
-			email: correctEmail,
-			password: correctPass
-		}
+		// const newUser = {
+		// 	name: correctName,
+		// 	email: correctEmail,
+		// 	password: correctPass
+		// }
 
-		fetch('http://localhost:4000/register',{
-			method: 'POST',
-			body: JSON.stringify(newUser),
-			headers: { 'Content-Type': 'application/json',}
-		})
-			.then(response => response.text())
-			.then((data) => console.log(data));
+		// fetch('http://localhost:4000/register',{
+		// 	method: 'POST',
+		// 	body: JSON.stringify(newUser),
+		// 	headers: { 'Content-Type': 'application/json',}
+		// })
+		// 	.then(response => response.text())
+		// 	.then((data) => console.log(data));
 		}
 }
 

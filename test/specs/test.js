@@ -1,9 +1,9 @@
 describe('Login page - Tests', () => {
   it('Go to login page', () => {
-      const pageWeek = 'https://dariofalzone.github.io/problem10-rr/index.html';
+      const pageLog = 'https://dariofalzone.github.io/problem10-rr/index.html';
 
       //Enter Login Page
-      browser.url(pageWeek);
+      browser.url(pageLog);
       //Validation one
       expect(browser).toHaveTitle('Login');
       //Validation Two
@@ -17,10 +17,10 @@ describe('Login page - Tests', () => {
 
 describe('Register page - Tests', () => {
     it('Go to register page', () => {
-        const pageWeek = 'https://dariofalzone.github.io/problem10-rr/register.html';
+        const pageRegister = 'https://dariofalzone.github.io/problem10-rr/register.html';
 
         //Enter Login Page
-        browser.url(pageWeek);
+        browser.url(pageRegister);
         //Validation one
         expect(browser).toHaveTitle('Register');
         //Validation Two
