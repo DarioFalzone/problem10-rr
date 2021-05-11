@@ -2,13 +2,22 @@
 # Descripción del problema a resolver
 La problemática de la semana 14 consiste en crear test automatizados para los formularios creados por ustedes en la problemática de la semana 10 y 11. En este caso no hay un % de cobertura definido, pero deberán crear al menos 2 test para cada sección del formulario.
 
-⚠️⚠️ 
-	SE ESTÁ TRABAJANDO EN LA VALIDACION DE LOS FORMULARIOS , AL MODIFICAR LOS ARCHIVOS PUEDE FALLAR HASTA QUE ESTO ESTÉ SOLUCIONADO
-⚠️⚠️
+⛔ EN CURSO:
+	⚠️⚠️
+		- SE ESTA TRABAJANDO SOBRE LA VALIDACION DE CLICK EN EL BOTON ENVIAR SIN RELLENAR EL FORMULARIO
+		- AGREGAR 2 CASOS DE TEST MAS A CADA FORMULARIO 
+	⚠️⚠️
+
+✅ FIXEADO:
+						✓ Validaciones correspondiente a la semana 10 funcionando
+
+📄 INFORMACION UTIL
 
 - ✔ Login Page: (https://dariofalzone.github.io/problem10-rr/)
 - ✔ Register Page: (https://dariofalzone.github.io/problem10-rr/register.html)
-- ⚠️- El back de la problematicá esta alojado en el repositorio de la Semana 11:
+
+⚠️El back de la problematicá esta alojado en el repositorio de la Semana 11:
+
 (https://github.com/DarioFalzone/app-11)
 
 # Pasos a seguir para ejecutar los tests
@@ -17,6 +26,40 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 	3 - Tener instalado WDio y sus dependencias
 	4 - npm run test
 	5 - Se ejecutaran de manera automatica los test configurados por cada página
+
+⊛ Formulario LOGEO validaciones:
+
+		→ INPUT EMAIL
+			- No nulo ✓
+			- No puede estar vacio ✓
+			- Debe respetar el formato email@email.com ✓
+
+		→ INPUT PASSWORD
+			- No nulo ✓
+			- No puede estar vacio ✓
+			- Menor a 8 caracteres ✓
+			- Debe contener numero numero minimamente ✓
+
+⊛ Formulario REGISTRO validaciones:
+
+		→ INPUT NAME
+			- No nulo ✓
+			- No puede estar vacio ✓
+			- El valor ingresado debe ser menor a 6 caracteres ✓
+
+		→ INPUT EMAIL
+			- No nulo ✓
+			- No puede estar vacio ✓
+			- Debe respetar el formato email@email.com ✓
+
+		→ INPUT PASSWORD
+			- No nulo ✓
+			- No puede estar vacio ✓
+			- Menor a 8 caracteres ✓
+			- Debe contener numero numero minimamente ✓
+
+		→ INPUT REPETIR PASSWORD
+
 
 # Pasos a seguir para resolver la problematica:
 	1) Dentro del repositorio de la semana 11 (o el más actual) que tengan realizado su formulario,instalar y configurar webdriverIO.

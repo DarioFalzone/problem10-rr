@@ -134,13 +134,13 @@ function validationFunction() {
 			password: correctPass
 		}
 
-		fetch('http://localhost:4000/login',{
-			method: 'POST',
-			body: JSON.stringify(newUser),
-			headers: { 'Content-Type': 'application/json',}
-		})
-			.then(response => response.text())
-			.then((data) => console.log(data));
+		// fetch('http://localhost:4000/login',{
+		// 	method: 'POST',
+		// 	body: JSON.stringify(newUser),
+		// 	headers: { 'Content-Type': 'application/json',}
+		// })
+		// 	.then(response => response.text())
+		// 	.then((data) => console.log(data));
 	}
 }
 
