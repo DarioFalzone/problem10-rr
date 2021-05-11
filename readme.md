@@ -4,10 +4,17 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 ⛔ EN CURSO:
 	⚠️⚠️
-		- AGREGAR 2 CASOS DE TEST MAS A CADA FORMULARIO
+		- Se implementará PAGE OBJECT para optimizar el código
+		- Se agregarán mas casos de test para cubrir mas funciones
+		- Modificar la estructura de la raiz para una mejor compresion de la estructura de la página
 	⚠️⚠️
 
 ✅ FIXEADO:
+
+	# Fix 0.0.2:
+	✔ Se agregan un total de tres validaciones a cada formulario con codigo no optimizado
+
+	# Fix 0.0.1:
 	✔ Validaciones correspondiente a la semana 10 funcionando
 
 📄 INFORMACION UTIL
@@ -36,7 +43,7 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 			- No nulo ✓
 			- No puede estar vacio ✓
 			- Menor a 8 caracteres ✓
-			- Debe contener numero numero minimamente ✓
+			- Debe contener un numero minimamente ✓
 
 ⊛ Formulario REGISTRO validaciones:
 
@@ -54,10 +61,20 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 			- No nulo ✓
 			- No puede estar vacio ✓
 			- Menor a 8 caracteres ✓
-			- Debe contener numero numero minimamente ✓
+			- Debe contener un numero minimamente ✓
 
 		→ INPUT REPETIR PASSWORD
 
+# Test realizados con WDio ⬇⬇⬇
+	⊛ Formulario LOGEO
+		- Se verificá el titulo de la pagina de manera correcta
+		- Se verifica que la url ingresada sea la correcta
+		- Se ingresa informacion correcta a los campos, se presiona click en el boton "login", pass ok
+
+	⊛ Formulario REGISTRO
+		- Se verificá el titulo de la pagina de manera correcta
+		- Se verifica que la url ingresada sea la correcta
+		- Se ingresa informacion correcta a los campos, se presiona click en el boton "register", pass ok
 
 # Pasos a seguir para resolver la problematica:
 	1) Dentro del repositorio de la semana 11 (o el más actual) que tengan realizado su formulario,instalar y configurar webdriverIO.
