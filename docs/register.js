@@ -6,7 +6,7 @@ let email = document.getElementById('register-email');
 let nameUser = document.getElementById('register-name');
 let password = document.getElementById('register-password');
 let rePassword = document.getElementById('re-password');
-let resetButton = document.getElementById('reset-button');
+let resetButton = document.getElementById('button-reset');
 
 // MESSAGE ALERT
 let success = document.getElementById('message-text');

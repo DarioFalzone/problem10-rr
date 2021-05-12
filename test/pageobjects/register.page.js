@@ -20,7 +20,7 @@ class registerForm {
 	}
 
   get resetButton() {
-		return $('#reset-button');
+		return $('#button-reset');
 	}
 
   get errorText() {
@@ -32,16 +32,16 @@ class registerForm {
     this.userEmail.setValue(email);
     this.userPassword.setValue(password);
     this.userConfirmPass.setValue(rePassword);
-    this.loginButton.click();
+    this.registerButton.click();
   }
 
-  // testReset(name, email, password, rePassword) {
-  //   this.registerName.setValue(name);
-  //   this.userEmail.setValue(email);
-  //   this.userPassword.setValue(password);
-  //   this.userConfirmPass.setValue(rePassword);
-  //   this.resetButton.click();
-  // }
+  testReset(name, email, password, rePassword) {
+    this.registerName.setValue(name);
+    this.userEmail.setValue(email);
+    this.userPassword.setValue(password);
+    this.userConfirmPass.setValue(rePassword);
+    this.resetButton.click();
+  }
 }
 
 module.exports = new registerForm();
