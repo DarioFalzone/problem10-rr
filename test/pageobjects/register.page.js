@@ -8,7 +8,7 @@ class registerForm {
 	}
 
 	get userPassword() {
-		return $('#register-pass');
+		return $('#register-password');
 	}
 
   get userConfirmPass(){
@@ -20,7 +20,7 @@ class registerForm {
 	}
 
   get resetButton() {
-		return $('#button-reset');
+		return $('#reset-button');
 	}
 
   get errorText() {
