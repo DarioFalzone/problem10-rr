@@ -10,7 +10,7 @@ describe('Register page - ¡go to find error!', () => {
 	describe('Test form register with correct information', () => {
 		it('Go to register page, write correct information', () => {
 			browser.url(pageLog);
-			registerForm.registerForm('dario', 'dario95@gmail.com', 'dario789','dario789');
+			registerForm.testRegister('dario', 'dario95@gmail.com', 'dario789','dario789');
 			expect(registerForm.errorText).toHaveText('Every validation has passed');
 			pauseTime();
 		});
