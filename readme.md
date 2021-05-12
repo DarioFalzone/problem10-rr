@@ -5,14 +5,16 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 # IN COURSE:
 	# ⚠️⚠️
-		# Se implementará PAGE OBJECT para optimizar el código
-		# Se agregarán mas casos de test para cubrir mas funciones
 		# Modificar la estructura de la raiz para una mejor compresion de la estructura de la página
 	# ⚠️⚠️
 
 ----------------------------------------------------------
 
 ✅ Changelog:
+
+	# Fix 0.0.3:
+	✔ Se implementa sistema de page object para poder reutilizar codigo
+	✔ Se implementas mas casos de test para probar mas elementos
 
 	# Fix 0.0.2:
 	✔ Se agregan un total de tres validaciones a cada formulario con codigo no optimizado
