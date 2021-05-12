@@ -24,15 +24,6 @@ describe('Login page - ¡go to find error!', () => {
 	});
 
 	describe('Test password input', () => {
-		it('Go to login page, write incorrect pass (not greater  than 8)', () => {
-			browser.url(pageLog);
-			loginForm.testLogin('dario95@gmail.com', 'dario7899999');
-			expect(loginForm.errorText).toHaveText(
-				'Please enter a password greater than 8 characters'
-			);
-			pauseTime();
-		});
-
 		it('Go to login page, write incorrect pass (not number in pass)', () => {
 			browser.url(pageLog);
 			loginForm.testLogin('dario95@gmail.com', 'dario');
