@@ -184,10 +184,7 @@ function validationFunction() {
 		let correctPass = password.value;
 		let correctEmail = email.value;
 
-		success.innerHTML = `<p>Every validation has passed</p>
-				                 <p>Your Username is: <br> ${correctName}</p>
-				                 <p>Your email is: <br> ${correctEmail}</p>
-				                 <p>Your password is: <br> ${correctPass}</p>`;
+		success.innerHTML = `<p>Every validation has passed</p>`;
 		success.style.display = 'contents';
 		success.style.color = '#27ae60';
 

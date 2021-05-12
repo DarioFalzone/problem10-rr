@@ -1,66 +1,36 @@
-describe('Register page - Tests', () => {
-  it('Go to register page, set value on inputs, write wrong inf, click register', () => {
-      const pageRegister = 'https://dariofalzone.github.io/problem10-rr/register.html';
+const registerForm = require('../pageobjects/register.page');
 
-      const inputName = $('#register-name');
-      const inputEmail = $('#register-email');
-      const inputPass = $('#register-password');
-      const inputRePass = $('#re-password');
-      const registerButton = $('#button-send');
-      // const resetButton = $('#button-reset');
+describe('Register page - ¡go to find error!', () => {
+	function pauseTime() {
+		browser.pause(1500);
+	}
 
-      //Enter Register Page
-      browser.url(pageRegister);
+	const pageLog = 'https://dariofalzone.github.io/problem10-rr/register.html';
 
-      //Validation Three
-      inputName.setValue('Patrick Roth');
-      inputEmail.setValue('patrickrth@nameofthewind.com');
-      inputPass.setValue('kvote123');
-      inputRePass.setValue('kvote123');
+	describe('Test form register with correct information', () => {
+		it('Go to register page, write correct information', () => {
+			browser.url(pageLog);
+			registerForm.testLogin('dario', 'dario95@gmail.com', 'dario789','dario789');
+			expect(registerForm.errorText).toHaveText('Every validation has passed');
+			pauseTime();
+		});
 
-      browser.pause(3000);
+		// it('Go to login page, write incorrect information', () => {
+		// 	browser.url(pageLog);
+		// 	registerForm.testLogin('dario95.com', 'dario789');
+		// 	expect(registerForm.errorText).toHaveText('The email entered is not valid');
+		// 	pauseTime();
+		// });
+	});
 
-      registerButton.click();
-
-      //Validation one
-      expect(browser).toHaveTitle('Register');
-      //Validation Two
-      expect(browser).toHaveUrl('https://dariofalzone.github.io/problem10-rr/register.html')
-
-      browser.pause(3000);
-
-      //Validation Three
-  });
-
-  it('Go to register page, set value on inputs, write random inf, click reset', () => {
-    const pageRegister = 'https://dariofalzone.github.io/problem10-rr/register.html';
-
-    const inputName = $('#register-name');
-    const inputEmail = $('#register-email');
-    const inputPass = $('#register-password');
-    const inputRePass = $('#re-password');
-    const resetButton = $('#button-reset');
-
-    //Enter Register Page
-    browser.url(pageRegister);
-
-    //Validation Three
-    inputName.setValue('Patrick Roth');
-    inputEmail.setValue('patrickrth@nameofthewind.com');
-    inputPass.setValue('kvote123');
-    inputRePass.setValue('kvote123');
-
-    browser.pause(3000);
-
-    resetButton.click();
-
-    //Validation one
-    expect(browser).toHaveTitle('Register');
-    //Validation Two
-    expect(browser).toHaveUrl('https://dariofalzone.github.io/problem10-rr/register.html')
-
-    browser.pause(3000);
-
-    //Validation Three
-});
+	// describe('Test password input', () => {
+	// 	it('Go to login page, write incorrect pass (not number in pass)', () => {
+	// 		browser.url(pageLog);
+	// 		registerForm.testLogin('dario95@gmail.com', 'dario');
+	// 		expect(registerForm.errorText).toHaveText(
+	// 			'Please enter a password with one number minimum'
+	// 		);
+	// 		pauseTime();
+	// 	});
+	// });
 });

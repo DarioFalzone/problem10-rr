@@ -15,10 +15,6 @@ class loginForm {
 		return $('#message-text');
 	}
 
-	buttonRegister() {
-    this.btnRegister.click();
-  }
-
   testLogin(email, password) {
     this.userEmail.setValue(email);
     this.userPassword.setValue(password);
