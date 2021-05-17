@@ -5,7 +5,7 @@ La problemática de la semana 14 consiste en crear test automatizados para los f
 
 # IN COURSE:
 	# ⚠️⚠️
-		# Modificar la estructura de la raiz para una mejor compresion de la estructura de la página
+		# ALL CLEAN
 	# ⚠️⚠️
 
 ----------------------------------------------------------
